@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
     private static final String NECK = "NECK";
     private static final String SLEEVE = "SLEEVE";
     private static final String WAIST = "WAIST";
@@ -20,10 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText editInseam;
 
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         SharedPreferences pref =
                 PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -49,14 +47,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.height_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, HeightActivity.class);
-                startActivity(intent);
+        findViewById(R.id.height_button)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent =
+                                new Intent(MainActivity.this, HeightActivity.class);
+                        startActivity(intent);
 
-            }
-        });
+                    }
+                });
     }
 
     private void saveData() {
