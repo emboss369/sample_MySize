@@ -26,6 +26,7 @@ public class HeightActivity extends AppCompatActivity {
         SharedPreferences pref
                 = PreferenceManager.getDefaultSharedPreferences(this);
         int height = pref.getInt(HEIGHT, 160);
+        mHeight.setText(String.valueOf(height));
 
         /// スピナーの処理
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -73,7 +74,6 @@ public class HeightActivity extends AppCompatActivity {
                     public void onStopTrackingTouch(SeekBar seekBar) {
                     }
                 });
-        mHeight.setText(String.valueOf(height));
 
         /// ラジオボタンの処理
         RadioGroup radio = (RadioGroup) findViewById(R.id.radioGroup);
